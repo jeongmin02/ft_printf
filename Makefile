@@ -6,14 +6,14 @@
 #    By: jerhee <jerhee@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/18 10:24:10 by jerhee            #+#    #+#              #
-#    Updated: 2022/08/18 10:58:11 by jerhee           ###   ########.fr        #
+#    Updated: 2022/08/19 19:04:38 by jerhee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Werror -Wextra -Wall
-SRCS = 
-OBJS = 
+SRCS = ft_printf.c print_arg.c
+OBJS = ft_printf.o print_arg.o
 AR = ar rcs
 NAME = libft.a
 
