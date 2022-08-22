@@ -6,21 +6,20 @@
 #    By: jerhee <jerhee@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/18 10:24:10 by jerhee            #+#    #+#              #
-#    Updated: 2022/08/19 19:04:38 by jerhee           ###   ########.fr        #
+#    Updated: 2022/08/22 17:10:22 by jerhee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Werror -Wextra -Wall
-SRCS = ft_printf.c print_arg.c
-OBJS = ft_printf.o print_arg.o
-AR = ar rcs
-NAME = libft.a
+SRCS = ft_printf.c print_arg.c utils.c
+OBJS = ft_printf.o print_arg.o utils.o
+NAME = libftprintf.a
 
 all : $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -I includes -c $< -o $@
+$(OBJS): $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS)
 
 clean :
 	rm -f $(OBJS)
@@ -29,6 +28,6 @@ fclean : clean
 	rm -f $(NAME)
 
 $(NAME) : $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 re : fclean all
